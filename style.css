@@ -1,0 +1,56 @@
+h1, h2 {
+    margin: 0;
+}
+.div {
+    background-color: lightgreen;
+}
+bod {
+    background-color: darkgoldenrod;
+}
+body {
+    font-family: sans-serif;
+    background-color: rgb(17, 14, 51);
+}
+.hidden {
+    display: none;
+}
+.main-title {
+    font-size: 38px;
+    text-align: center;
+    color: #fff;
+    margin: 40px 0;
+}
+.text {
+    color: #fff;
+    font-size: 20px;
+}
+.products-main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    max-width: 260px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    padding: 8px 5px;
+    color: #fff;
+}
+.img {
+    width: 250px;
+    height: 300px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.title {
+    font-size: 18px;
+}
+.desc {
+    font-size: 12px;
+}
+.btn {
+    cursor: pointer;
+}
