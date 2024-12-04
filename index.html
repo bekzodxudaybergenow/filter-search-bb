@@ -11,12 +11,28 @@
         <div class="container">
             <div class="produc-main--row">
                 <div class="product-action">
-                    <form class="product-form">
+                    <form class="product-form--search">
                         <label class="product-form--label" for="search">
-                            <input class="from-search--input" type="text" placeholder="Search">
-                            <button class="form-search--btn" type="submit">Search</button>
+                            <input class="input from-search--input" type="text" placeholder="Search">
+                            <button class="btn-submit form-search--btn" type="submit">Search</button>
                         </label>
                     </form>
+                    <form class="product-form--price">
+                        <label class="product-form-price--label" for="search">
+                            <input class="input from-search-price--input" type="text" placeholder="Min">
+                        </label>
+                        <label class="product-form-price--label" for="search">
+                            <input class="input from-search-price--input" type="text" placeholder="Max">
+                        </label>
+                        <button class="btn-submit product-form-price--btn">Search</button>
+                    </form>
+                    <select class="category" id="category">
+                        <option value="all">All</option>
+                        <option value="jewelery">Jewelery</option>
+                        <option value="men's clothing">Men's clothing</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="women's clothing">Women's clothing</option>
+                    </select>
                 </div>
                 <ul class="products-list">
                     <li class="product-item">
