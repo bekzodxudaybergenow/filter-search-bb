@@ -1,8 +1,14 @@
 let productList = document.querySelector('.products-list');
 let productFormSearch = document.querySelector('.product-form--search');
 let fromSearchInput = document.querySelector('.from-search--input');
+let minPriceInput = document.querySelector('.min-price');
+let maxPriceInput = document.querySelector('.max-price');
+let productFormPrice = document.querySelector('.product-form--price');
+
 
 /* Event */
+
+/* Kiritilgan so'zlar orqali filter qilib beradi */
 productFormSearch.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -10,11 +16,29 @@ productFormSearch.addEventListener('submit', (e) => {
         return item.title.includes(fromSearchInput.value);
     })
 
+    fromSearchInput.value = '';
+
     mainProduct(filterProducts);
 })
 
+/* Min Max Price - Narxlar orqali filter qilib beradi */
+productFormPrice.addEventListener('submit', ((e) => {
+    e.preventDefault();
+
+    let filterProducts = products.filter((item) => {
+        return minPriceInput.value < item.price && maxPriceInput.value > item.price;
+    })
+    
+    minPriceInput.value = '';
+    maxPriceInput.value = '';
+
+    mainProduct(filterProducts);
+}))
 
 
+
+/* ProductListga <li> itemlarini yasab va joylab beradi. mainProduct() funksiya parametr 
+kutadi, kelsa shu array orqali filter qiladi va htmlga joylaydi. Kelmasa Products arrayni ni oladi*/ 
 function mainProduct(tempList = products){
     productList.innerHTML = '';
 
