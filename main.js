@@ -1,4 +1,35 @@
+let productList = document.querySelector('.products-list');
+let productFormSearch = document.querySelector('.product-form--search');
+let fromSearchInput = document.querySelector('.from-search--input');
 
+/* Event */
+productFormSearch.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    let filterProducts = products.filter((item) => {
+        return item.title.includes(fromSearchInput.value);
+    })
+
+    mainProduct(filterProducts);
+})
+
+
+
+function mainProduct(tempList = products){
+    productList.innerHTML = '';
+
+    tempList.forEach((item) => {
+        productList.innerHTML += `
+        <li class="product-item">
+            <img class="product-item--img" src="${item.image}" width="300" height="300" alt="">
+            <h2 class="product-item--title">${item.title}</h2>
+            <p class="product-item--desc">${item.description}</p>
+            <button class="btn">Sotib olish</button>
+        </li>
+        `
+    })
+}
+mainProduct();
 
 
 
