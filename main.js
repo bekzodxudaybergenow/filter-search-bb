@@ -24,7 +24,6 @@ productFormSearch.addEventListener('submit', (e) => {
 /* Min Max Price - Narxlar orqali filter qilib beradi */
 productFormPrice.addEventListener('submit', ((e) => {
     e.preventDefault();
-
     let filterProducts = products.filter((item) => {
         return minPriceInput.value < item.price && maxPriceInput.value > item.price;
     })
@@ -34,6 +33,7 @@ productFormPrice.addEventListener('submit', ((e) => {
 
     mainProduct(filterProducts);
 }))
+
 
 
 
@@ -54,6 +54,14 @@ function mainProduct(tempList = products){
     })
 }
 mainProduct();
+
+function getOption(el) {
+    let filterProducts = products.filter((item) => {
+        return el.value == 'all' ? item : item.category == el.value;
+    })
+
+    mainProduct(filterProducts);
+}
 
 
 
